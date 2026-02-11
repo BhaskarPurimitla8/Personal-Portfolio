@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-background-start to-background-end text-white antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  }
+  
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:bg-white/10 hover:shadow-2xl hover:shadow-primary/20;
+  }
+  
+  .section-padding {
+    @apply py-20 px-6 md:px-12 lg:px-16;
+  }
+  
+  .heading-gradient {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+  }
+  
+  /* Focus visible states for accessibility */
+  .focus-visible-custom:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background-start;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .glow-primary {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.4), 0 0 40px rgba(6, 182, 212, 0.2);
+  }
+  
+  .glow-secondary {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4), 0 0 40px rgba(168, 85, 247, 0.2);
+  }
+  
+  .glow-accent {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.4), 0 0 40px rgba(236, 72, 153, 0.2);
+  }
+  
+  /* Hover highlight for keywords */
+  .hl {
+    position: relative;
+    font-weight: 600;
+    color: #e5e7eb;
+    transition: all 0.3s ease;
+    cursor: default;
+  }
+  
+  .hl::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #22d3ee, #a855f7);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .hl:hover {
+    color: #22d3ee;
+  }
+  
+  .hl:hover::after {
+    transform: scaleX(1);
+  }
+}
