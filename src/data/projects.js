@@ -1,5 +1,28 @@
 export const projects = [
     {
+        id: "n8n-job-automation",
+        name: "Automated Job Search Pipeline",
+        summary: "An n8n workflow automation that fetches fresh job listings from the Adzuna API, intelligently filters by role, experience, and recency, deduplicates results, and exports a clean XLSX report — all on a daily schedule.",
+        tags: ["n8n", "Workflow Automation", "API Integration", "JavaScript", "Excel"],
+        problem: "Manually searching for relevant fresher-level job openings across multiple roles and locations is time-consuming and repetitive. I needed an automated pipeline that runs daily, pulls fresh listings, and delivers a clean, deduplicated Excel file of only the most relevant opportunities.",
+        skills: ["n8n Workflow Design", "REST API Integration", "JavaScript", "Data Filtering", "Data Deduplication", "Workflow Automation", "JSON Data Processing", "Scheduling"],
+        features: [
+            "Scheduled daily execution at 8 AM via n8n Schedule Trigger",
+            "Configurable input parameters for 19 target roles, 4 locations (Hyderabad, Chennai, Bangalore, Remote), and skill-based filtering",
+            "Adzuna API integration fetching 50 results per page per role-location combination, sorted by date",
+            "Intelligent role whitelist filtering — only keeps jobs matching allowed titles (Data Analyst, Business Analyst, SQL Developer, React Developer, AI Engineer, etc.)",
+            "Strict fresher/entry-level experience filtering — blocks senior, lead, manager, and principal roles; rejects listings requiring 3+ years unless explicitly marked as fresher/entry-level",
+            "Date-based filtering to surface only jobs posted within the last 3 days",
+            "Field extraction for clean output: job title, company, location, apply link, and posted date",
+            "Smart deduplication by job ID, URL, or title+company+location combination",
+            "Automated XLSX export for easy review and tracking"
+        ],
+        outcome: "Built a fully automated, zero-maintenance job search pipeline that delivers a curated daily Excel report of relevant fresher-level openings. The workflow processes hundreds of raw listings down to a clean, deduplicated shortlist — saving hours of manual job hunting effort every day.",
+        githubUrl: "https://github.com/BhaskarPurimitla8/n8n-Job-Automation",
+        liveUrl: null,
+        screenshots: ["/screenshots/n8n-job-workflow.png"]
+    },
+    {
         id: "playstore-eda",
         name: "Play Store App Review Analysis",
         summary: "Exploratory Data Analysis on Play Store apps and user reviews to uncover key factors influencing app engagement and success.",
