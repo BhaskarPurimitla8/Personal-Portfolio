@@ -1,5 +1,27 @@
 export const projects = [
     {
+        id: "nimbus-churn-analysis",
+        name: "NimbusAI Customer Churn & Retention Analysis",
+        summary: "End-to-end data analyst assignment for a B2B SaaS platform — spanning SQL, MongoDB, Python statistical analysis, and Power BI dashboarding across dual-database architecture with 1,204 customers and 80K+ records.",
+        tags: ["SQL", "MongoDB", "Python", "Power BI", "Statistics", "K-Means Clustering"],
+        problem: "NimbusAI's VP of Product needed actionable churn insights from messy production data split across PostgreSQL (transactional) and MongoDB (behavioral). The challenge: merge cross-database data, clean 10 data quality issues, perform hypothesis testing, segment customers, and deliver an interactive dashboard — all within 24 hours.",
+        skills: ["PostgreSQL", "MongoDB Aggregation Pipelines", "Python (pandas, scipy, scikit-learn)", "Power BI", "Statistical Analysis", "ETL Pipeline Design", "Data Cleaning", "K-Means Clustering", "Hypothesis Testing", "Business Intelligence"],
+        features: [
+            "5 advanced SQL queries: JOINs + aggregation, window functions (RANK, LAG), CTEs with temporal filtering, time series with rolling averages and anomaly detection, fuzzy duplicate detection with confidence scoring",
+            "4 MongoDB aggregation pipelines: tier-segmented sessions per user ($lookup cross-database join), 7-day retention analysis (timestamp-based), onboarding funnel with drop-off rates and median step times, free-tier engagement scoring for upsell targeting",
+            "Built nimbus_tier_sync.py ETL bridge — exports PostgreSQL tier data into MongoDB lookup collection, enabling cross-database segmentation within MongoDB pipelines",
+            "Cleaned 10 data quality issues: 668 duplicate records, 977 orphan records, mixed field naming (customer_id vs customerId), NULL session durations, inconsistent timestamps, data type mismatches",
+            "Welch's t-test hypothesis testing (p≈0.030, Cohen's d≈0.13) proving engagement-churn link is statistically significant but practically negligible",
+            "K-Means clustering (k=4) with RFM-inspired features producing 4 actionable segments: Champions, Steady Users, Engaged Explorers, At-Risk",
+            "Power BI dashboard with 6 visuals including scatter chart combining SQL + MongoDB data, 2 interactive slicers, and DAX measures",
+            "Merged PostgreSQL (7 tables) + MongoDB (3 collections) into single master dataset, exporting 6 cleaned CSVs for dashboard consumption"
+        ],
+        outcome: "Identified 22.1% overall churn rate driven primarily by low team adoption ('Not enough users' as #1 reason). Discovered Professional-tier support ticket gap suggesting need for 'Enterprise Lite' plan. Segmented 485 high-engagement free-tier users as prime upsell targets. Delivered statistically-backed recommendations: redesign onboarding to mandate team invitations, proactively contact high-ticket Professional users, and trigger upgrade prompts for engaged free users exceeding 75th percentile.",
+        githubUrl: "https://github.com/BhaskarPurimitla8/NimbusAI-Data-Analyst-Assignment",
+        liveUrl: null,
+        screenshots: []
+    },
+    {
         id: "n8n-job-automation",
         name: "Automated Job Search Pipeline",
         summary: "An n8n workflow automation that fetches fresh job listings from the Adzuna API, intelligently filters by role, experience, and recency, deduplicates results, and exports a clean XLSX report — all on a daily schedule.",
